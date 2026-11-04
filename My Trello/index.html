@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello Básico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <button id="btn-menu-movil">☰ Menú</button>
+
+    <div class="contenedor">
+
+        <aside id="sidebar" class="sidebar">
+            <h1 class="logo">☒ TRELLO</h1>
+            <p class="p"> Organiza tus tareas de manera sencilla</p>
+            <ul class="menu">
+                <li id="menu-todas">☱ Todas las tareas</li>
+                <li id="menu-pendientes">◷ Pendientes</li>
+                <li id="menu-completadas">☑ Completadas</li>
+                <li id="menu-calendario">🗒 Calendario</li>
+                <li id="menu-estadisticas">◐ Estadísticas</li>
+                <li id="menu-ajustes">⚙ Ajustes</li>
+            </ul>
+
+            <div class="frase-sidebar">
+                <span class="comillas">“</span>
+                <p>La disciplina es el puente entre las metas y los logros.</p>
+            </div>
+        </aside>
+
+        <main class="contenido">
+
+            <header class="cabecera">
+                <h2>Mi Tablero</h2>
+                <div class="perfil-btn" id="btn-perfil">👤</div>
+            </header>
+
+            <section class="tarjeta">
+                <h3>Agregar nueva tarea</h3>
+                <div class="fila-controles">
+
+                    <div class="grupo-input expandir">
+                        <label for="input-tarea">Tarea</label>
+                        <input type="text" id="input-tarea" placeholder="¿Qué necesitas hacer?">
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="input-prioridad">Prioridad</label>
+                        <select id="input-prioridad">
+                            <option value="Alta">Alta</option>
+                            <option value="Media" selected>Media</option>
+                            <option value="Baja">Baja</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="input-fecha">Fecha</label>
+                        <input type="date" id="input-fecha">
+                    </div>
+
+                    <button class="btn btn-agregar" id="btn-agregar-tarea">+ Agregar</button>
+                </div>
+            </section>
+
+            <section class="tarjeta seccion-estadisticas" id="caja-estadisticas">
+                <div class="bloque-filtros">
+                    <h4>Filtrar tareas</h4>
+                    <div class="botones-filtro">
+                        <button class="btn btn-filtro activo" id="btn-filtro-todas">☱Todas</button>
+                        <button class="btn btn-filtro" id="btn-filtro-pendientes">◷ Pendientes</button>
+                        <button class="btn btn-filtro" id="btn-filtro-completadas">☑ Completadas</button>
+                    </div>
+                </div>
+
+                <div class="bloque-contadores">
+                    <div class="cuadro-contador">
+                        <span>Total</span>
+                        <h2 id="cont-total">0</h2>
+                    </div>
+                    <div class="cuadro-contador">
+                        <span>Pendientes</span>
+                        <h2 id="cont-pendientes">0</h2>
+                    </div>
+                    <div class="cuadro-contador">
+                        <span>Completadas</span>
+                        <h2 id="cont-completadas">0</h2>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tarjeta">
+                <h3>Lista de tareas</h3>
+
+                <div id="lista-tareas"></div> <!--JS: Aquí se insertarán las tareas dinámicamente -->
+            </section>
+
+            <footer class="pie-pagina">
+                <p> &copy 2026 Mi Trello. Todos los derechos reservados.</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <div id="modal-perfil" class="modal-fondo">
+        <div class="tarjeta-perfil">
+            <button class="btn-cerrar" id="btn-cerrar-perfil">✖</button>
+            <h3>Datos del Usuario</h3>
+            <div class="datos-info">
+                <p><strong>Nombre:</strong> Xavier Toala</p>
+                <p><strong>Carrera:</strong> Tecnologías de la Información</p>
+                <p><strong>Institución:</strong> ESPOCH</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
